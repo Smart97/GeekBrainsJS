@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="temperature()">Первое задание</button>
+	<button onclick="taskTwo()">Второе задание</button>
+	<button onclick="taskThree()">Третье задание</button>
+	<script>
+		function temperature() {
+			let tempC = prompt('Введите температуру по Цельсию');
+			let tempF = (9 / 5) * tempC + 32;
+			if (isNaN(tempF)) {
+				console.log('Введите число')
+			} else {
+				console.log('Температура по Фаренгейту ' + tempF);
+			}
+		}
+		function taskTwo() {
+			let admin;
+			let name = 'Василий';
+			admin = name;
+			console.log('name = ' + name + ' admin = ' + admin);
+		}
+		function taskThree() {
+			console.log('Так как string + number = string, то 1000 + "108"= "1000108" ');
+			console.log(1000 + "108");
+		}
+	</script>
+</body>
+</html>
