@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h5>Игра камень, ножницы, бумага</h5>
+	<button onclick="game(1)">Камень</button>
+	<button onclick="game(2)">Ножницы</button>
+	<button onclick="game(3)">Бумага</button>
+	<hr>
+	<h5>Вывод чисел от х до 15 через switch</h5>
+	<button onclick="randomNumber()">Случайное число</button>
+	<hr>
+	<h5>Калькулятор</h5>
+	<button onclick="calc('+')">Операция прибавления</button>
+	<button onclick="calc('-')">Операция вычитания</button>
+	<button onclick="calc('*')">Операция умножения</button>
+	<button onclick="calc('/')">Операция деления</button>
+	<hr>
+	<h5>Возведение в степень с помощью рекурсии</h5>
+	<button onclick="exponentiation()">Возвести</button>
+    <script>
+        function game(john) {
+            let terminator = Math.floor(Math.random() * 3) + 1; 
+            
+            if ((john == 1 && terminator == 2) || (john == 2 && terminator == 3) || (john == 3 && terminator == 1)) {
+                console.log('Mankind won!');
+            } else if (john == terminator) {
+                console.log('Both won!');
+            } else {
+                console.log('Skynet won!');
+            }
+            switch(john){
+   				case 1:
+       				john = "Камень";
+        			break;
+        		case 2:
+       				john = "Ножницы";
+        			break;
+        		case 3:
+       				john = "Бумага";
+        			break;}
+            switch(terminator){
+   				case 1:
+       				terminator = "Камень";
+        			break;
+        		case 2:
+       				terminator = "Ножницы";
+        			break;
+        		case 3:
+       				terminator = "Бумага";
+        			break;}
+
+            console.log(`Кожаный мешок: ${john}, SkyNet: ${terminator}`);
+        }
+        function randomNumber() {
+        	let number = Math.floor(Math.random() * 15) + 1;
+        	switch(number){
+   				case 1:
+       				console.log(number);
+       				number++;
+       			case 2:
+       				console.log(number);
+       				number++;
+       			case 3:
+       				console.log(number);
+       				number++;
+       			case 4:
+       				console.log(number);
+       				number++;
+       			case 5:
+       				console.log(number);
+       				number++;
+       			case 6:
+       				console.log(number);
+       				number++;
+       			case 7:
+       				console.log(number);
+       				number++;
+       			case 8:
+       				console.log(number);
+       				number++;
+       			case 9:
+       				console.log(number);
+       				number++;
+       			case 10:
+       				console.log(number);
+       				number++;
+       			case 11:
+       				console.log(number);
+       				number++;
+       			case 12:
+       				console.log(number);
+       				number++;
+       			case 13:
+       				console.log(number);
+       				number++;
+       			case 14:
+       				console.log(number);
+       				number++;
+       			case 15:
+       				console.log(number);
+       		}
+       	}
+       	function sum(a, b) {
+			return a + b
+		}
+       	function subtraction(a, b) {
+			return a - b
+		}
+       	function multi(a, b) {
+			return a * b
+		}
+       	function division(a, b) {
+			return a / b
+		}
+		function calc(operation) {
+			let arg1 = +prompt('Введите первое число');
+			let arg2 = +prompt('Введите первое число');
+			mathOperation(arg1, arg2, operation)
+		}
+		function mathOperation(arg1, arg2, operation) {
+			switch(operation){
+				case '+':
+				console.log(sum(arg1, arg2));
+				break;
+				case '-':
+				console.log(subtraction(arg1, arg2));
+				break;
+				case '*':
+				console.log(multi(arg1, arg2));
+				break;
+				case '/':
+				console.log(division(arg1, arg2));
+				break;
+			}
+		}
+		function exponentiation() {
+			let val = prompt('Какое число вы желаете возвести в степень?');
+			let pow = prompt('В какую степень?');
+			let multiplier = val;
+			power(val, pow, multiplier);
+		}
+		function power(val, pow, multiplier) {
+			if (pow == 1) {
+				console.log('Число = ' + val);
+			} else if (pow > 1) {
+				pow--;
+				val = val * multiplier;
+				power(val, pow, multiplier);
+			}
+		}
+
+    </script>
+</body>
+</html>
